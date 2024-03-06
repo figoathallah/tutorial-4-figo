@@ -4,23 +4,23 @@ const UP = Vector2(0, -1)
 
 export var speed: int = 400
 export var GRAVITY: int = 1200
-export var jump_speed: int = -400
+export var jump_speed: int = -600
 
 var velocity: Vector2 = Vector2()
 
 
 func get_input():
 	velocity.x = 0
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
 		velocity.y = jump_speed
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("ui_right"):
 		velocity.x += speed
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("ui_left"):
 		velocity.x -= speed
 
 
 func _physics_process(_delta):
-	velocity.y += delta * GRAVITY
+	velocity.y += _delta * GRAVITY
 	get_input()
 	velocity = move_and_slide(velocity, UP)
 

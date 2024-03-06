@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/dead.jpg" type="Texture" id=1]
+[ext_resource path="res://scenes/LoseScreen2.gd" type="Script" id=2]
 [ext_resource path="res://assets/Axis Extrabold.otf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 66
 font_data = ExtResource( 3 )
 
-[node name="LoseScreen" type="Node2D"]
+[node name="LoseScreen2" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 512, 320 )
